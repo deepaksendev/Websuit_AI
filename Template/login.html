@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSuit AI — Login / Register</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/login.css">
+
+</head>
+
+<body>
+
+  <!-- ── LEFT PANEL ── -->
+  <div class="left-panel">
+    <div class="left-bg"></div>
+    <div class="left-grid"></div>
+
+    <div class="left-content">
+      <div class="brand">
+        <div class="brand-icon">W</div>
+        <div class="brand-name">WebSuit AI</div>
+      </div>
+
+      <h2 class="left-headline">
+        Transform your<br>
+        <span class="highlight">WordPress site</span><br>
+        with AI — Free
+      </h2>
+      <p class="left-sub">
+        Join thousands of businesses already using WebSuit AI to improve their WordPress websites in minutes.
+      </p>
+
+      <div class="feature-list">
+        <div class="feature-row">
+          <div class="feature-check">✓</div>
+          <span>WordPress detection & analysis</span>
+        </div>
+        <div class="feature-row">
+          <div class="feature-check">✓</div>
+          <span>AI-powered content improvement</span>
+        </div>
+        <div class="feature-row">
+          <div class="feature-check">✓</div>
+          <span>Built-in SEO optimization</span>
+        </div>
+        <div class="feature-row">
+          <div class="feature-check">✓</div>
+          <span>Download or deploy in one click</span>
+        </div>
+        <div class="feature-row">
+          <div class="feature-check">✓</div>
+          <span>Free for 30 days — no card needed</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <p class="testimonial-text">
+        "WebSuit AI saved me hours of work. I just pasted my client's URL and got a fully improved WordPress site in
+        under 3 minutes. Incredible!"
+      </p>
+      <div class="testimonial-author">
+        <div class="author-avatar">R</div>
+        <div class="author-info">
+          <span class="author-name">Rahul Sharma</span>
+          <span class="author-role">Freelance Web Developer, Indore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RIGHT PANEL ── -->
+  <div class="right-panel">
+    <div class="auth-box">
+
+      <!-- Mobile Brand -->
+      <div class="mobile-brand">
+        <div class="mobile-brand-icon">W</div>
+        <div class="mobile-brand-name">WebSuit AI</div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="auth-tabs">
+        <button class="tab-btn active" onclick="switchTab('login')">Log In</button>
+        <button class="tab-btn" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <!-- Alert -->
+      <div class="alert alert-error" id="alertError">⚠️ <span id="errorMsg">Invalid credentials. Please try
+          again.</span></div>
+      <div class="alert alert-success" id="alertSuccess">✅ <span id="successMsg">Account created! Redirecting...</span>
+      </div>
+
+      <!-- ── LOGIN FORM ── -->
+      <div id="loginForm">
+        <h2 class="form-title">Welcome back 👋</h2>
+        <p class="form-sub">Log in to your WebSuit AI account</p>
+
+        <div class="social-btns">
+          <button class="social-btn">
+            <span>🔵</span> Google
+          </button>
+          <button class="social-btn">
+            <span>⚫</span> GitHub
+          </button>
+        </div>
+
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span class="divider-text">or continue with email</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉️</span>
+            <input type="email" placeholder="deepak@example.com" id="loginEmail">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" placeholder="Enter your password" id="loginPassword">
+            <span class="eye-toggle" onclick="togglePassword('loginPassword')">👁️</span>
+          </div>
+        </div>
+
+        <div class="options-row">
+          <label class="checkbox-wrap">
+            <input type="checkbox"> <span>Remember me</span>
+          </label>
+          <a href="#" class="forgot-link">Forgot password?</a>
+        </div>
+
+        <button class="submit-btn" onclick="handleLogin()">
+          <span id="loginText">Log In to WebSuit AI</span>
+          <div class="spinner" id="loginSpinner"></div>
+        </button>
+
+        <p class="switch-text">
+          Don't have an account? <a onclick="switchTab('register')">Create one free →</a>
+        </p>
+        <div style="text-align:center; margin-bottom: 24px;">
+          <a href="index.html" style="font-size:13px; color: var(--muted); text-decoration: none;">
+            ← Back to Home
+          </a>
+        </div>
+      </div>
+
+      <!-- ── REGISTER FORM ── -->
+      <div id="registerForm" style="display:none;">
+        <h2 class="form-title">Create account 🚀</h2>
+        <p class="form-sub">Start transforming WordPress sites for free</p>
+
+        <div class="social-btns">
+          <button class="social-btn">
+            <span>🔵</span> Google
+          </button>
+          <button class="social-btn">
+            <span>⚫</span> GitHub
+          </button>
+        </div>
+
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span class="divider-text">or register with email</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" placeholder="Deepak" id="firstName">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input type="text" placeholder="Sen" id="lastName">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <div class="input-wrap">
+            <span class="input-icon">✉️</span>
+            <input type="email" placeholder="deepak@example.com" id="regEmail">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" placeholder="Create a strong password" id="regPassword" oninput="checkStrength()">
+            <span class="eye-toggle" onclick="togglePassword('regPassword')">👁️</span>
+          </div>
+          <div class="password-strength" id="strengthMeter">
+            <div class="strength-bars">
+              <div class="strength-bar" id="bar1"></div>
+              <div class="strength-bar" id="bar2"></div>
+              <div class="strength-bar" id="bar3"></div>
+              <div class="strength-bar" id="bar4"></div>
+            </div>
+            <span class="strength-label" id="strengthLabel">Enter a password</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>I am a...</label>
+          <div class="input-wrap">
+            <span class="input-icon">💼</span>
+            <select
+              style="width:100%;padding:11px 14px 11px 40px;border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:white;outline:none;appearance:none;cursor:pointer;">
+              <option>Select your role...</option>
+              <option>Small Business Owner</option>
+              <option>Freelancer / Developer</option>
+              <option>Startup Founder</option>
+              <option>WordPress Agency</option>
+              <option>Student</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="options-row" style="margin-bottom:20px;">
+          <label class="checkbox-wrap">
+            <input type="checkbox" id="termsCheck">
+            <span>I agree to the <a href="#" style="color:var(--accent);">Terms</a> & <a href="#"
+                style="color:var(--accent);">Privacy Policy</a></span>
+          </label>
+        </div>
+
+        <button class="submit-btn" onclick="handleRegister()">
+          <span id="registerText">Create Free Account</span>
+          <div class="spinner" id="registerSpinner"></div>
+        </button>
+
+        <p class="switch-text">
+          Already have an account? <a onclick="switchTab('login')">Log in →</a>
+        </p>
+
+        <p class="terms-text">
+          By creating an account you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+          We'll never share your data.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs[0].classList.toggle('active', tab === 'login');
+      tabs[1].classList.toggle('active', tab === 'register');
+      document.getElementById('loginForm').style.display = tab === 'login' ? 'block' : 'none';
+      document.getElementById('registerForm').style.display = tab === 'register' ? 'block' : 'none';
+      hideAlerts();
+    }
+
+    function togglePassword(id) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    function checkStrength() {
+      const pw = document.getElementById('regPassword').value;
+      const meter = document.getElementById('strengthMeter');
+      meter.style.display = 'block';
+
+      const bars = [document.getElementById('bar1'), document.getElementById('bar2'),
+      document.getElementById('bar3'), document.getElementById('bar4')];
+      const label = document.getElementById('strengthLabel');
+
+      bars.forEach(b => { b.className = 'strength-bar'; });
+
+      let score = 0;
+      if (pw.length >= 6) score++;
+      if (pw.length >= 10) score++;
+      if (/[A-Z]/.test(pw) && /[0-9]/.test(pw)) score++;
+      if (/[^A-Za-z0-9]/.test(pw)) score++;
+
+      const labels = ['Too weak', 'Weak', 'Medium', 'Strong', 'Very strong'];
+      const classes = ['weak', 'weak', 'medium', 'strong', 'strong'];
+
+      for (let i = 0; i < score; i++) {
+        bars[i].classList.add(classes[score - 1]);
+      }
+
+      label.textContent = labels[score];
+      label.style.color = score <= 1 ? '#ef4444' : score === 2 ? '#f59e0b' : '#10b981';
+    }
+
+    function showAlert(type, msg) {
+      hideAlerts();
+      const el = document.getElementById(type === 'error' ? 'alertError' : 'alertSuccess');
+      const msgEl = document.getElementById(type === 'error' ? 'errorMsg' : 'successMsg');
+      msgEl.textContent = msg;
+      el.style.display = 'flex';
+    }
+
+    function hideAlerts() {
+      document.getElementById('alertError').style.display = 'none';
+      document.getElementById('alertSuccess').style.display = 'none';
+    }
+
+    function setLoading(form, loading) {
+      const btn = document.getElementById(form + 'Text');
+      const spinner = document.getElementById(form + 'Spinner');
+      btn.textContent = loading ? (form === 'login' ? 'Logging in...' : 'Creating account...') :
+        (form === 'login' ? 'Log In to WebSuit AI' : 'Create Free Account');
+      spinner.style.display = loading ? 'block' : 'none';
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      if (!email || !password) {
+        showAlert('error', 'Please fill in all fields.');
+        return;
+      }
+
+      setLoading('login', true);
+
+      setTimeout(() => {
+        setLoading('login', false);
+        showAlert('success', 'Login successful! Redirecting...');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 800);
+      }, 1500);
+    }
+
+    function handleRegister() {
+      const firstName = document.getElementById('firstName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+      const terms = document.getElementById('termsCheck').checked;
+
+      if (!firstName || !email || !password) {
+        showAlert('error', 'Please fill in all required fields.');
+        return;
+      }
+
+      setLoading('register', true);
+
+      setTimeout(() => {
+        setLoading('register', false);
+        showAlert('success', 'Account created! Redirecting...');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 800);
+      }, 1500);
+    }
+
+    function handleRegister() {
+      const firstName = document.getElementById('firstName').value;
+      const email = document.getElementById('regEmail').value;
+      const password = document.getElementById('regPassword').value;
+      const terms = document.getElementById('termsCheck').checked;
+
+      if (!firstName || !email || !password) {
+        showAlert('error', 'Please fill in all required fields.');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        showAlert('error', 'Please enter a valid email address.');
+        return;
+      }
+
+      if (password.length < 6) {
+        showAlert('error', 'Password must be at least 6 characters.');
+        return;
+      }
+
+      if (!terms) {
+        showAlert('error', 'Please agree to the Terms & Privacy Policy.');
+        return;
+      }
+
+      setLoading('register', true);
+
+      setTimeout(() => {
+        setLoading('register', false);
+        showAlert('success', 'Account created! Redirecting to dashboard...');
+      }, 1500);
+    }
+  </script>
+</body>
+
+</html>

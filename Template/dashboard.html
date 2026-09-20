@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSuit AI — Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/dashboard.css">
+</head>
+<body>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+<!-- ══════════════════════
+     SIDEBAR (Slide-out)
+══════════════════════ -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+        <a href="../template/index.html" class="sidebar-brand" style="text-decoration: none;">
+            <div class="brand-icon">W</div>
+            <div class="brand-name">WebSuit AI</div>
+        </a>
+        <button class="sidebar-close" onclick="closeSidebar()">✕</button>
+    </div>
+
+    <nav class="sidebar-nav">
+        <span class="nav-section-label">Main</span>
+        <a class="nav-item" href="../template/index.html">
+            <span class="nav-icon">🏠</span> Home
+        </a>
+        <a class="nav-item active" href="dashboard.html">
+            <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a class="nav-item" href="generate.html">
+            <span class="nav-icon">➕</span> New Project
+        </a>
+        <a class="nav-item" href="dashboard.html">
+            <span class="nav-icon">📁</span> My Projects
+            <span class="nav-badge">4</span>
+        </a>
+
+        <span class="nav-section-label">Tools</span>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">🔍</span> WordPress Detector
+        </a>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">📈</span> SEO Reports
+        </a>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">🎨</span> Templates
+        </a>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">🛒</span> Marketplace
+            <span class="nav-badge" style="background:#f59e0b;">New</span>
+        </a>
+
+        <span class="nav-section-label">Account</span>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">⚙️</span> Settings
+        </a>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">💳</span> Billing
+        </a>
+        <a class="nav-item" href="#">
+            <span class="nav-icon">❓</span> Help & Docs
+        </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+        <div class="plan-badge">
+            <div class="plan-label">Current Plan</div>
+            <div class="plan-name">Free Tier 🎉</div>
+            <div class="plan-bar"><div class="plan-fill"></div></div>
+            <div class="plan-usage">2 of 5 generations used</div>
+        </div>
+        <button class="upgrade-btn">⚡ Upgrade to Pro</button>
+        <div class="user-row">
+            <div class="user-avatar">D</div>
+            <div class="user-info">
+                <div class="user-name">Deepak Sen</div>
+                <div class="user-plan">Free Plan</div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- ══════════════════════
+     TOP NAVBAR
+══════════════════════ -->
+<nav class="topnav">
+    <div class="topnav-left">
+        <button class="hamburger-btn" onclick="openSidebar()">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="../template/index.html" class="topnav-logo" style="text-decoration: none;">
+            <div class="brand-icon">W</div>
+            <span class="topnav-brand-name">WebSuit AI</span>
+        </a>
+    </div>
+
+    <div class="topnav-center">
+        <a href="dashboard.html" class="topnav-link active">Dashboard</a>
+        <a href="generate.html" class="topnav-link">New Project</a>
+        <a href="dashboard.html" class="topnav-link">My Projects</a>
+        <a href="#" class="topnav-link">Templates</a>
+    </div>
+
+    <div class="topnav-right">
+        <div class="search-bar">
+            <span>🔍</span>
+            <input type="text" placeholder="Search projects...">
+        </div>
+        <div class="icon-btn">
+            🔔
+            <div class="notif-dot"></div>
+        </div>
+        <button class="new-project-btn" onclick="window.location.href='generate.html'">
+            ➕ New Project
+        </button>
+    </div>
+</nav>
+
+<!-- ══════════════════════
+     MAIN CONTENT
+══════════════════════ -->
+<div class="main">
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Welcome -->
+        <div class="welcome-row">
+            <div>
+                <h1 class="welcome-title">Good morning, Deepak! 👋</h1>
+                <p class="welcome-sub">You have 3 remaining generations this month. Let's build something great!</p>
+            </div>
+            <button class="new-project-btn" style="padding:11px 24px;font-size:14px;" onclick="window.location.href='generate.html'">
+                🚀 Generate New Site
+            </button>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-card-top">
+                    <div class="stat-card-icon icon-blue">🌐</div>
+                    <span class="stat-change change-up">+2 this week</span>
+                </div>
+                <div class="stat-card-num">4</div>
+                <div class="stat-card-label">Total Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-top">
+                    <div class="stat-card-icon icon-green">✅</div>
+                    <span class="stat-change change-up">75%</span>
+                </div>
+                <div class="stat-card-num">3</div>
+                <div class="stat-card-label">Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-top">
+                    <div class="stat-card-icon icon-yellow">📈</div>
+                    <span class="stat-change change-up">+12 avg</span>
+                </div>
+                <div class="stat-card-num">87</div>
+                <div class="stat-card-label">Avg SEO Score</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-top">
+                    <div class="stat-card-icon icon-purple">⬇️</div>
+                    <span class="stat-change change-up">All safe</span>
+                </div>
+                <div class="stat-card-num">8</div>
+                <div class="stat-card-label">Downloads</div>
+            </div>
+        </div>
+
+        <!-- Quick Action -->
+        <div class="quick-action">
+            <div class="qa-bg"></div>
+            <div class="qa-content">
+                <div class="qa-title">🚀 Transform a WordPress Site Now</div>
+                <div class="qa-sub">Paste any WordPress URL and let AI improve it in minutes.</div>
+            </div>
+            <div class="qa-input-row">
+                <input class="qa-input" type="text" placeholder="https://yourwordpresssite.com">
+                <button class="qa-btn">Generate →</button>
+            </div>
+        </div>
+
+        <!-- Two column -->
+        <div class="two-col">
+
+            <!-- Projects Table -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">My Projects</div>
+                    <div class="card-actions">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Done</button>
+                        <button class="filter-btn">Processing</button>
+                    </div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th class="hide-mobile">Status</th>
+                            <th class="hide-mobile">SEO Score</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="project-name">My Bakery Shop</div>
+                                <div class="project-url">mybakery.com</div>
+                            </td>
+                            <td class="hide-mobile">
+                                <span class="status-badge status-done">
+                                    <span class="status-dot"></span> Completed
+                                </span>
+                            </td>
+                            <td class="hide-mobile">
+                                <div class="seo-score">
+                                    <div class="seo-bar"><div class="seo-fill" style="width:92%"></div></div>
+                                    92
+                                </div>
+                            </td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn btn-preview" onclick="window.location.href='preview.html'">👁 Preview</button>
+                                    <button class="action-btn btn-download">⬇ Download</button>
+                                    <button class="action-btn btn-delete">🗑</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="project-name">Tech Startup Landing</div>
+                                <div class="project-url">techstartup.in</div>
+                            </td>
+                            <td class="hide-mobile">
+                                <span class="status-badge status-processing">
+                                    <span class="status-dot"></span> Processing
+                                </span>
+                            </td>
+                            <td class="hide-mobile">
+                                <div class="seo-score">
+                                    <div class="seo-bar"><div class="seo-fill" style="width:65%"></div></div>
+                                    65
+                                </div>
+                            </td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn btn-preview" disabled style="opacity:0.5">👁 Preview</button>
+                                    <button class="action-btn btn-delete">🗑</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="project-name">Clothing Store</div>
+                                <div class="project-url">fashionhub.com</div>
+                            </td>
+                            <td class="hide-mobile">
+                                <span class="status-badge status-done">
+                                    <span class="status-dot"></span> Completed
+                                </span>
+                            </td>
+                            <td class="hide-mobile">
+                                <div class="seo-score">
+                                    <div class="seo-bar"><div class="seo-fill" style="width:88%"></div></div>
+                                    88
+                                </div>
+                            </td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn btn-preview" onclick="window.location.href='preview.html'">👁 Preview</button>
+                                    <button class="action-btn btn-download">⬇ Download</button>
+                                    <button class="action-btn btn-delete">🗑</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="project-name">Restaurant Website</div>
+                                <div class="project-url">spicegarden.co.in</div>
+                            </td>
+                            <td class="hide-mobile">
+                                <span class="status-badge status-pending">
+                                    <span class="status-dot"></span> Pending
+                                </span>
+                            </td>
+                            <td class="hide-mobile">
+                                <div class="seo-score" style="color:var(--muted)">— —</div>
+                            </td>
+                            <td>
+                                <div class="action-btns">
+                                    <button class="action-btn btn-delete">🗑</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Right column -->
+            <div class="right-col">
+
+                <!-- Usage Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Usage This Month</div>
+                        <span style="font-size:12px;color:var(--muted);">Free Plan</span>
+                    </div>
+                    <div class="usage-item">
+                        <span class="usage-label">Generations Used</span>
+                        <span class="usage-value">2 / 5</span>
+                    </div>
+                    <div class="usage-bar-wrap">
+                        <div class="usage-bar"><div class="usage-fill" style="width:40%"></div></div>
+                    </div>
+                    <div class="usage-item">
+                        <span class="usage-label">SEO Reports</span>
+                        <span class="usage-value">3</span>
+                    </div>
+                    <div class="usage-item">
+                        <span class="usage-label">Downloads</span>
+                        <span class="usage-value">8</span>
+                    </div>
+                    <div class="usage-item">
+                        <span class="usage-label">Resets On</span>
+                        <span class="usage-value">July 1, 2026</span>
+                    </div>
+                    <div style="padding:16px 24px;">
+                        <button style="width:100%;padding:10px;background:var(--gradient);border:none;border-radius:10px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:white;cursor:pointer;">
+                            ⚡ Upgrade for Unlimited
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Recent Activity</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-green">✅</div>
+                        <div class="activity-text">
+                            <div class="activity-title">My Bakery Shop completed</div>
+                            <div class="activity-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-blue">⬇️</div>
+                        <div class="activity-text">
+                            <div class="activity-title">Clothing Store theme downloaded</div>
+                            <div class="activity-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-yellow">🔍</div>
+                        <div class="activity-text">
+                            <div class="activity-title">SEO report generated</div>
+                            <div class="activity-time">Yesterday</div>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon icon-blue">🚀</div>
+                        <div class="activity-text">
+                            <div class="activity-title">New project started</div>
+                            <div class="activity-time">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openSidebar() {
+        document.getElementById('sidebar').classList.add('open');
+        document.getElementById('overlay').classList.add('show');
+    }
+
+    function closeSidebar() {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('overlay').classList.remove('show');
+    }
+
+    // Close sidebar on overlay click
+    document.getElementById('overlay').addEventListener('click', closeSidebar);
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>

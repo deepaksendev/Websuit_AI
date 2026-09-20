@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSuit AI — Generate</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/generate.css">
+</head>
+
+<body>
+
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">W</div>
+      <div class="brand-name">WebSuit AI</div>
+    </div>
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">Main</span>
+      <a class="nav-item" href="dashboard.html">
+        <span class="nav-icon">🏠</span> Dashboard
+      </a>
+      <a class="nav-item active" href="generate.html">
+        <span class="nav-icon">➕</span> New Project
+      </a>
+      <a class="nav-item" href="dashboard.html">
+        <span class="nav-icon">📁</span> My Projects
+        <span class="nav-badge">4</span>
+      </a>
+
+      <span class="nav-section-label">Tools</span>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">🔍</span> WordPress Detector
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">📈</span> SEO Reports
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">🎨</span> Templates
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">🛒</span> Marketplace
+        <span class="nav-badge" style="background:#f59e0b;">New</span>
+      </a>
+
+      <span class="nav-section-label">Account</span>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">⚙️</span> Settings
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">💳</span> Billing
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">❓</span> Help & Docs
+      </a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="user-row">
+        <div class="user-avatar">D</div>
+        <div class="user-info">
+          <div class="user-name">Deepak Sen</div>
+          <div class="user-plan">Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <!-- ══════════════════════
+     TOP NAVBAR
+══════════════════════ -->
+  <nav class="topnav">
+    <div class="topnav-left">
+      <button class="hamburger-btn" onclick="openSidebar()">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="../template/index.html" class="topnav-logo" style="text-decoration: none;">
+        <div class="brand-icon">W</div>
+        <span class="topnav-brand-name">WebSuit AI</span>
+      </a>
+    </div>
+
+    <div class="topnav-center">
+      <a href="dashboard.html" class="topnav-link">Dashboard</a>
+      <a href="generate.html" class="topnav-link active">New Project</a>
+      <a href="dashboard.html" class="topnav-link">My Projects</a>
+      <a href="preview.html" class="topnav-link">Preview</a>
+    </div>
+
+    <div class="topnav-right">
+      <div class="icon-btn">🔔</div>
+      <div class="icon-btn">⚙️</div>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="page-tag">🤖 AI Generation</div>
+      <h1 class="page-title">Generate Your <span>Improved Site</span></h1>
+      <p class="page-sub">Enter a WordPress URL and let AI transform it in minutes</p>
+    </div>
+
+    <!-- Steps Indicator -->
+    <div class="steps-indicator">
+      <div class="step-dot">
+        <div class="step-circle active">1</div>
+        <span class="step-label active">Configure</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-dot">
+        <div class="step-circle inactive">2</div>
+        <span class="step-label">Processing</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-dot">
+        <div class="step-circle inactive">3</div>
+        <span class="step-label">Preview</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-dot">
+        <div class="step-circle inactive">4</div>
+        <span class="step-label">Download</span>
+      </div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="generate-card">
+      <div class="card-top">
+        <div class="card-top-bg"></div>
+        <div class="card-top-content">
+          <div class="card-top-title">🔗 Step 1 — Enter WordPress URL</div>
+          <div class="card-top-sub">We'll automatically detect if it's a WordPress site before processing</div>
+        </div>
+      </div>
+
+      <div class="card-body">
+
+        <!-- URL Input -->
+        <div class="url-section">
+          <div class="input-label">
+            WordPress Website URL
+            <span class="required-badge">Required</span>
+          </div>
+          <div class="url-input-wrap">
+            <div class="url-field">
+              <span class="url-prefix">🔗</span>
+              <input type="text" id="urlInput" placeholder="https://yourwordpresssite.com" oninput="resetDetection()"
+                onkeydown="if(event.key==='Enter') detectWordPress()">
+              <span class="url-status" id="urlStatus"></span>
+            </div>
+            <button class="detect-btn" onclick="detectWordPress()">
+              🔍 Detect WordPress
+            </button>
+          </div>
+
+          <!-- Detection Result -->
+          <div class="detection-result detect-success" id="detectSuccess">
+            <span class="detect-icon">✅</span>
+            <div class="detect-info">
+              <div class="detect-title">WordPress Detected!</div>
+              <div class="detect-sub" id="detectDetails">WordPress 6.4 · Astra Theme · 12 pages found</div>
+            </div>
+          </div>
+
+          <div class="detection-result detect-fail" id="detectFail">
+            <span class="detect-icon">❌</span>
+            <div class="detect-info">
+              <div class="detect-title">Not a WordPress Site</div>
+              <div class="detect-sub">We currently support WordPress sites only. Wix & others coming soon!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="options-section">
+          <div class="options-title">🎨 Choose Generation Style</div>
+          <div class="options-grid">
+            <div class="option-card selected" onclick="selectOption(this)">
+              <div class="option-check">✓</div>
+              <div class="option-icon">✨</div>
+              <div class="option-name">Full Redesign</div>
+              <div class="option-desc">Complete AI redesign of content, layout and SEO</div>
+            </div>
+            <div class="option-card" onclick="selectOption(this)">
+              <div class="option-check"></div>
+              <div class="option-icon">✍️</div>
+              <div class="option-name">Content Only</div>
+              <div class="option-desc">Improve text and content, keep existing design</div>
+            </div>
+            <div class="option-card" onclick="selectOption(this)">
+              <div class="option-check"></div>
+              <div class="option-icon">📈</div>
+              <div class="option-name">SEO Boost</div>
+              <div class="option-desc">Focus on SEO improvements and meta optimization</div>
+            </div>
+          </div>
+
+          <!-- Feature Toggles -->
+          <div class="options-title" style="margin-top:24px;">⚡ Features to Include</div>
+          <div class="toggles-grid">
+            <div class="toggle-item">
+              <div class="toggle-left">
+                <span class="toggle-icon">📈</span>
+                <div class="toggle-text">
+                  <div class="toggle-name">SEO Optimization</div>
+                  <div class="toggle-desc">Meta tags, keywords, titles</div>
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="toggle-item">
+              <div class="toggle-left">
+                <span class="toggle-icon">✍️</span>
+                <div class="toggle-text">
+                  <div class="toggle-name">Content Rewrite</div>
+                  <div class="toggle-desc">AI rewrites all text content</div>
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="toggle-item">
+              <div class="toggle-left">
+                <span class="toggle-icon">🎨</span>
+                <div class="toggle-text">
+                  <div class="toggle-name">Design Suggestions</div>
+                  <div class="toggle-desc">Color & layout improvements</div>
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox" checked>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="toggle-item">
+              <div class="toggle-left">
+                <span class="toggle-icon">🖼️</span>
+                <div class="toggle-text">
+                  <div class="toggle-name">Image Alt Tags</div>
+                  <div class="toggle-desc">Auto generate alt text for images</div>
+                </div>
+              </div>
+              <label class="toggle-switch">
+                <input type="checkbox">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advanced Settings -->
+        <div class="advanced-toggle" onclick="toggleAdvanced()">
+          <span id="advArrow">▶</span> Advanced Settings
+        </div>
+
+        <div class="advanced-content" id="advancedContent">
+          <div class="adv-grid">
+            <div class="adv-group">
+              <label>Target Language</label>
+              <select>
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Spanish</option>
+                <option>French</option>
+              </select>
+            </div>
+            <div class="adv-group">
+              <label>Writing Tone</label>
+              <select>
+                <option>Professional</option>
+                <option>Friendly</option>
+                <option>Casual</option>
+                <option>Formal</option>
+              </select>
+            </div>
+            <div class="adv-group">
+              <label>Target Industry</label>
+              <select>
+                <option>Auto Detect</option>
+                <option>E-commerce</option>
+                <option>Restaurant</option>
+                <option>Technology</option>
+                <option>Healthcare</option>
+                <option>Education</option>
+              </select>
+            </div>
+            <div class="adv-group">
+              <label>Target Keywords (optional)</label>
+              <input type="text" placeholder="e.g. best bakery in Indore">
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="generate-btn-wrap">
+          <button class="generate-btn" id="generateBtn" onclick="startGeneration()">
+            🚀 Generate Improved Website
+          </button>
+          <p class="generate-note">
+            <span>1 generation</span> will be used from your free plan · Est. time: 2-3 minutes
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips-card">
+      <div class="tips-title">💡 Tips for Best Results</div>
+      <div class="tips-grid">
+        <div class="tip-item">
+          <div class="tip-icon">🔗</div>
+          <div class="tip-text">Use the homepage URL for best analysis results</div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-icon">⏱️</div>
+          <div class="tip-text">Generation takes 2-3 minutes — don't close the tab</div>
+        </div>
+        <div class="tip-item">
+          <div class="tip-icon">🔒</div>
+          <div class="tip-text">We never store your website content permanently</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <!-- ── PROCESSING OVERLAY ── -->
+  <div class="processing-overlay" id="processingOverlay">
+    <div class="processing-card">
+      <div class="processing-spinner"></div>
+      <div class="processing-title">Generating Your Site... ✨</div>
+      <div class="processing-sub">This usually takes 2-3 minutes. Please don't close this tab!</div>
+      <div class="processing-steps">
+        <div class="proc-step done" id="step1">
+          <span class="proc-icon">✅</span> WordPress detected & scraped
+        </div>
+        <div class="proc-step active" id="step2">
+          <span class="proc-icon">🤖</span> AI analyzing content...
+        </div>
+        <div class="proc-step inactive" id="step3">
+          <span class="proc-icon">📈</span> SEO optimization
+        </div>
+        <div class="proc-step inactive" id="step4">
+          <span class="proc-icon">🎨</span> Generating WordPress theme
+        </div>
+        <div class="proc-step inactive" id="step5">
+          <span class="proc-icon">✨</span> Finalizing preview
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+
+    function selectOption(el) {
+      document.querySelectorAll('.option-card').forEach(c => {
+        c.classList.remove('selected');
+        c.querySelector('.option-check').textContent = '';
+      });
+      el.classList.add('selected');
+      el.querySelector('.option-check').textContent = '✓';
+    }
+
+    function toggleAdvanced() {
+      const content = document.getElementById('advancedContent');
+      const arrow = document.getElementById('advArrow');
+      content.classList.toggle('open');
+      arrow.textContent = content.classList.contains('open') ? '▼' : '▶';
+    }
+
+    function resetDetection() {
+      document.getElementById('detectSuccess').style.display = 'none';
+      document.getElementById('detectFail').style.display = 'none';
+      document.getElementById('urlStatus').style.display = 'none';
+      document.getElementById('urlInput').className = '';
+    }
+
+    function detectWordPress() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert('Please enter a URL first!');
+        return;
+      }
+
+      const status = document.getElementById('urlStatus');
+      status.textContent = '⏳ Checking...';
+      status.className = 'url-status status-checking';
+      status.style.display = 'block';
+
+      // Simulate detection
+      setTimeout(() => {
+        const isWordPress = url.includes('wordpress') || url.includes('wp') ||
+          !url.includes('wix') && !url.includes('squarespace');
+
+        if (isWordPress) {
+          document.getElementById('urlInput').className = 'valid';
+          status.textContent = '✅ WordPress!';
+          status.className = 'url-status status-valid';
+          document.getElementById('detectSuccess').style.display = 'flex';
+          document.getElementById('detectFail').style.display = 'none';
+        } else {
+          document.getElementById('urlInput').className = 'invalid';
+          status.textContent = '❌ Not WordPress';
+          status.className = 'url-status status-invalid';
+          document.getElementById('detectFail').style.display = 'flex';
+          document.getElementById('detectSuccess').style.display = 'none';
+        }
+      }, 1500);
+    }
+
+    function startGeneration() {
+      const url = document.getElementById('urlInput').value.trim();
+      if (!url) {
+        alert('Please enter a WordPress URL first!');
+        return;
+      }
+
+      document.getElementById('processingOverlay').classList.add('show');
+
+      // Simulate processing steps
+      const steps = ['step2', 'step3', 'step4', 'step5'];
+      let i = 0;
+
+      const interval = setInterval(() => {
+        if (i < steps.length) {
+          // Mark previous as done
+          if (i > 0) {
+            document.getElementById(steps[i - 1]).className = 'proc-step done';
+            document.getElementById(steps[i - 1]).querySelector('.proc-icon').textContent = '✅';
+          }
+          // Mark current as active
+          document.getElementById(steps[i]).className = 'proc-step active';
+          i++;
+        } else {
+          clearInterval(interval);
+          document.getElementById(steps[steps.length - 1]).className = 'proc-step done';
+          document.getElementById(steps[steps.length - 1]).querySelector('.proc-icon').textContent = '✅';
+          setTimeout(() => {
+            document.getElementById('processingOverlay').classList.remove('show');
+            alert('✅ Generation complete! Redirecting to preview...');
+          }, 1000);
+        }
+      }, 1500);
+    }
+  </script>
+
+</body>
+
+</html>

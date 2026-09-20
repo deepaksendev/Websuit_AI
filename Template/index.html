@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSuit AI — Transform Any WordPress Site with AI</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+
+<body> <!-- ── NAVBAR ── -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">W</div> WebSuit AI
+        </div>
+        <ul class="nav-links">
+            <li><a href="#how">How it Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#usecases">Use Cases</a></li>
+        </ul>
+        <div class="nav-cta"> <button class="btn-ghost">Log In</button> <button class="btn-primary">Get Started
+                Free</button> </div>
+        <div class="hamburger" onclick="toggleMenu()"> <span></span><span></span><span></span> </div>
+    </nav> <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu"> <a href="#how" onclick="toggleMenu()">How it Works</a> <a href="#features"
+            onclick="toggleMenu()">Features</a> <a href="#pricing" onclick="toggleMenu()">Pricing</a> <a
+            href="#usecases" onclick="toggleMenu()">Use Cases</a>
+        <div class="mobile-btns"> <button class="btn-ghost">Log In</button> <button class="btn-primary">Get Started
+                Free</button> </div>
+    </div> <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="badge-dot"></div> AI-Powered WordPress Transformation
+            </div>
+            <h1 class="hero-title"> Transform Any<br> <span class="highlight">WordPress Site</span><br> with AI —
+                Instantly </h1>
+            <p class="hero-subtitle"> Paste any WordPress URL. WebSuit AI analyzes, improves, and regenerates your
+                website with better content, design, and SEO — in minutes, not weeks. </p>
+            <div class="url-bar"> <span class="url-icon">🔗</span> <input class="url-input" type="text"
+                    placeholder="Paste your WordPress URL here..." value="https://mybusiness.com"> <span
+                    class="url-detect">✓ WordPress</span> <button class="url-btn">Generate Now →</button> </div>
+            <p class="hero-note"> <span>Free for 30 days</span> — No credit card · Works on any WordPress site </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-num">42%</div>
+                    <div class="stat-label">of internet is WordPress</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">&lt;3 min</div>
+                    <div class="stat-label">generation time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">10x</div>
+                    <div class="stat-label">faster than a dev</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-num">₹0</div>
+                    <div class="stat-label">to get started</div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- ── HOW IT WORKS ── -->
+    <section class="how-it-works" id="how">
+        <div class="how-header">
+            <div class="section-tag">How It Works</div>
+            <h2 class="section-title">Three steps to a better website</h2>
+            <p class="section-sub">No coding. No designers. No waiting. Just paste your URL and let AI do the work.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-icon">🔗</div>
+                <div class="step-num">01</div>
+                <h3>Paste Your URL</h3>
+                <p>Enter your WordPress website URL. Our system automatically detects WordPress and prepares for
+                    analysis.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🤖</div>
+                <div class="step-num">02</div>
+                <h3>AI Analyzes & Improves</h3>
+                <p>WebSuit AI scrapes your content, analyzes design, rewrites copy, and generates an improved version
+                    with better SEO.</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">🚀</div>
+                <div class="step-num">03</div>
+                <h3>Preview, Download or Deploy</h3>
+                <p>See a live preview. Download as WordPress .zip theme or deploy directly to your domain — one click.
+                </p>
+            </div>
+        </div>
+    </section> <!-- ── FEATURES ── -->
+    <section class="features" id="features">
+        <div class="features-grid">
+            <div>
+                <div class="section-tag">Features</div>
+                <h2 class="section-title">Everything your<br>website needs</h2>
+                <p class="section-sub" style="margin-bottom: 32px;">Built specifically for WordPress — the platform
+                    powering 42% of the internet.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-text">
+                            <h4>WordPress Detection</h4>
+                            <p>Automatically detects if your site runs on WordPress before processing.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-text">
+                            <h4>AI Content Improvement</h4>
+                            <p>Rewrites headlines, copy, and meta descriptions for maximum impact.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-text">
+                            <h4>Built-in SEO Optimization</h4>
+                            <p>Auto-generates meta titles, descriptions, keywords and SEO score report.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <div class="feature-text">
+                            <h4>One-Click Deployment</h4>
+                            <p>Deploy the improved site directly to your existing domain — no download needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="features-visual">
+                <div class="visual-bar">
+                    <div class="visual-dot"></div>
+                    <div class="visual-dot"></div>
+                    <div class="visual-dot"></div> <span class="visual-title">WebSuit AI — Site Analysis</span>
+                </div>
+                <div class="visual-body">
+                    <div class="analysis-item"> <span class="analysis-label">Platform</span> <span
+                            class="analysis-value">✅ WordPress 6.4</span> </div>
+                    <div class="analysis-item"> <span class="analysis-label">Content Quality</span> <span
+                            class="analysis-value">
+                            <div class="score-bar">
+                                <div class="score-fill" style="width:45%"></div>
+                            </div> 45%→91%
+                        </span> </div>
+                    <div class="analysis-item"> <span class="analysis-label">SEO Score</span> <span
+                            class="analysis-value">
+                            <div class="score-bar">
+                                <div class="score-fill" style="width:72%"></div>
+                            </div> 38→87
+                        </span> </div>
+                    <div class="analysis-item"> <span class="analysis-label">Headlines</span> <span
+                            class="analysis-value"><span class="badge-good">12 rewritten</span></span> </div>
+                    <div class="analysis-item"> <span class="analysis-label">Images</span> <span
+                            class="analysis-value"><span class="badge-good">8 optimized</span></span> </div>
+                    <div class="analysis-item"> <span class="analysis-label">Theme Status</span> <span
+                            class="analysis-value">✅ Ready!</span> </div>
+                    <div
+                        style="margin-top:16px;padding:12px;background:linear-gradient(135deg,#2563eb15,#06b6d415);border-radius:10px;text-align:center;font-size:13px;font-weight:600;color:#2563eb;">
+                        🎉 Your improved site is ready! Preview → </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- ── USE CASES ── -->
+    <section class="usecases" id="usecases">
+        <div style="text-align:center;margin-bottom:64px;">
+            <div class="section-tag">Use Cases</div>
+            <h2 class="section-title">Who uses WebSuit AI?</h2>
+            <p class="section-sub" style="margin:0 auto;">From small shop owners to large agencies — WebSuit AI works
+                for everyone with a WordPress site.</p>
+        </div>
+        <div class="usecase-grid">
+            <div class="usecase-card">
+                <div class="usecase-emoji">🏪</div>
+                <h3>Small Shop Owners</h3>
+                <p>Update your website without paying a developer every time. Get a professional site in minutes.</p>
+                <span class="usecase-tag">Save ₹5000+ per update</span>
+            </div>
+            <div class="usecase-card">
+                <div class="usecase-emoji">🚀</div>
+                <h3>Startups</h3>
+                <p>Launch faster with an AI-improved website. Focus on your product while WebSuit AI handles your web
+                    presence.</p> <span class="usecase-tag">10x faster launch</span>
+            </div>
+            <div class="usecase-card">
+                <div class="usecase-emoji">💼</div>
+                <h3>Freelancers</h3>
+                <p>Deliver client websites faster than ever. Generate, customize and deploy from one platform.</p> <span
+                    class="usecase-tag">3x more clients</span>
+            </div>
+        </div>
+    </section> <!-- ── PRICING ── -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-header">
+            <div class="section-tag">Pricing</div>
+            <h2 class="section-title">Simple, transparent pricing</h2>
+            <p class="section-sub">Start free for 30 days. No credit card required. Cancel anytime.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="plan-name">Free</div>
+                <div class="plan-price">₹0</div>
+                <div class="plan-period">forever</div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> 2 generations/month</li>
+                    <li><span class="check">✓</span> WordPress detection</li>
+                    <li><span class="check">✓</span> Basic SEO report</li>
+                    <li><span class="check">✓</span> .zip download</li>
+                </ul> <button class="plan-btn plan-btn-outline">Get Started</button>
+            </div>
+            <div class="pricing-card featured">
+                <div class="popular-badge">⭐ Most Popular</div>
+                <div class="plan-name">Basic</div>
+                <div class="plan-price">₹499</div>
+                <div class="plan-period">/month</div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> 10 generations/month</li>
+                    <li><span class="check">✓</span> Full SEO optimization</li>
+                    <li><span class="check">✓</span> Content editor</li>
+                    <li><span class="check">✓</span> Priority support</li>
+                </ul> <button class="plan-btn plan-btn-filled">Start Free Trial</button>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">₹1,499</div>
+                <div class="plan-period">/month</div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> Unlimited generations</li>
+                    <li><span class="check">✓</span> Template marketplace</li>
+                    <li><span class="check">✓</span> Direct deployment</li>
+                    <li><span class="check">✓</span> Analytics dashboard</li>
+                </ul> <button class="plan-btn plan-btn-outline">Get Pro</button>
+            </div>
+            <div class="pricing-card">
+                <div class="plan-name">Agency</div>
+                <div class="plan-price">₹4,999</div>
+                <div class="plan-period">/month</div>
+                <div class="plan-divider"></div>
+                <ul class="plan-features">
+                    <li><span class="check">✓</span> White label</li>
+                    <li><span class="check">✓</span> Team collaboration</li>
+                    <li><span class="check">✓</span> API access</li>
+                    <li><span class="check">✓</span> Dedicated support</li>
+                </ul> <button class="plan-btn plan-btn-outline">Contact Us</button>
+            </div>
+        </div>
+    </section> <!-- ── CTA ── -->
+    <section class="cta">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to transform<br>your WordPress site?</h2>
+            <p>Join thousands of businesses already using WebSuit AI. Start free today.</p>
+            <div class="cta-url-bar"> <input class="cta-input" type="text"
+                    placeholder="Paste your WordPress site URL..."> <button class="cta-btn">Generate Free →</button>
+            </div>
+        </div>
+    </section> <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-logo">WebSuit AI</div>
+                <p class="footer-desc">AI-powered WordPress website transformation. Improve any WordPress site in
+                    minutes.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>PRODUCT</h4>
+                    <ul>
+                        <li><a href="#">How it Works</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 WebSuit AI. All rights reserved.</span>
+            <span>Driven by next-generation AI</span>
+        </div>
+    </footer>
+    <script>   function toggleMenu() { const menu = document.getElementById('mobileMenu'); menu.classList.toggle('open'); }    // Close menu on outside click   document.addEventListener('click', function(e) {     const menu = document.getElementById('mobileMenu');     const hamburger = document.querySelector('.hamburger');     if (!menu.contains(e.target) && !hamburger.contains(e.target)) {       menu.classList.remove('open');     }   }); </script>
+</body>
+
+</html>

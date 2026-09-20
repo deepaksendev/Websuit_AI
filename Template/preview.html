@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebSuit AI — Preview</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/base.css">
+  <link rel="stylesheet" href="../static/css/preview.css">
+</head>
+
+<body>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+  <!-- ══════════════════════
+     SIDEBAR
+══════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">W</div>
+      <div class="brand-name">WebSuit AI</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">Main</span>
+      <a class="nav-item" href="dashboard.html">
+        <span class="nav-icon">🏠</span> Dashboard
+      </a>
+      <a class="nav-item" href="generate.html">
+        <span class="nav-icon">➕</span> New Project
+      </a>
+      <a class="nav-item" href="dashboard.html">
+        <span class="nav-icon">📁</span> My Projects
+        <span class="nav-badge">4</span>
+      </a>
+
+      <span class="nav-section-label">Tools</span>
+      <a class="nav-item active" href="preview.html">
+        <span class="nav-icon">👁️</span> Preview
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">📈</span> SEO Reports
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">🎨</span> Templates
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">🛒</span> Marketplace
+      </a>
+
+      <span class="nav-section-label">Account</span>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">⚙️</span> Settings
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">💳</span> Billing
+      </a>
+      <a class="nav-item" href="#">
+        <span class="nav-icon">❓</span> Help & Docs
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="user-row">
+        <div class="user-avatar">D</div>
+        <div class="user-info">
+          <div class="user-name">Deepak Sen</div>
+          <div class="user-plan">Free Plan</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════
+     MAIN
+══════════════════════ -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <button class="hamburger-btn" onclick="toggleSidebar()">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="breadcrumb">
+          <a class="breadcrumb-link" href="dashboard.html">Dashboard</a>
+          <span class="breadcrumb-sep">›</span>
+          <a class="breadcrumb-link" href="generate.html">Generate</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current">Preview</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="icon-btn">🔔</div>
+        <button class="edit-btn" onclick="goToEditor()">
+          ✏️ Edit
+        </button>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Page Header -->
+      <div class="page-header">
+        <div class="page-tag">👁️ Step 3 — Preview</div>
+        <h1 class="page-title">Your <span>Improved Site</span> is Ready!</h1>
+        <p class="page-sub">Review your AI-transformed website before downloading or deploying</p>
+      </div>
+
+      <!-- Steps Indicator -->
+      <div class="steps-indicator">
+        <div class="step-dot">
+          <div class="step-circle done">✓</div>
+          <span class="step-label done">Configure</span>
+        </div>
+        <div class="step-line done"></div>
+        <div class="step-dot">
+          <div class="step-circle done">✓</div>
+          <span class="step-label done">Processing</span>
+        </div>
+        <div class="step-line done"></div>
+        <div class="step-dot">
+          <div class="step-circle active">3</div>
+          <span class="step-label active">Preview</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-dot">
+          <div class="step-circle inactive">4</div>
+          <span class="step-label">Download</span>
+        </div>
+      </div>
+
+      <!-- Stats Row -->
+      <div class="preview-stats">
+        <div class="preview-stat">
+          <div class="preview-stat-icon icon-green">📈</div>
+          <div class="preview-stat-info">
+            <div class="preview-stat-num">87</div>
+            <div class="preview-stat-label">SEO Score</div>
+          </div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-icon icon-blue">📄</div>
+          <div class="preview-stat-info">
+            <div class="preview-stat-num">12</div>
+            <div class="preview-stat-label">Pages Improved</div>
+          </div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-icon icon-yellow">🖼️</div>
+          <div class="preview-stat-info">
+            <div class="preview-stat-num">8</div>
+            <div class="preview-stat-label">Images Optimized</div>
+          </div>
+        </div>
+        <div class="preview-stat">
+          <div class="preview-stat-icon icon-purple">⚡</div>
+          <div class="preview-stat-info">
+            <div class="preview-stat-num">94</div>
+            <div class="preview-stat-label">Performance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Area -->
+      <div class="preview-area">
+
+        <!-- Device Toggle -->
+        <div class="device-toggle">
+          <button class="device-btn active" onclick="switchDevice('desktop', this)">
+            🖥️ Desktop
+          </button>
+          <button class="device-btn" onclick="switchDevice('tablet', this)">
+            📱 Tablet
+          </button>
+          <button class="device-btn" onclick="switchDevice('mobile', this)">
+            📱 Mobile
+          </button>
+        </div>
+
+        <!-- Browser Frame -->
+        <div class="browser-frame" id="browserFrame">
+          <!-- Browser Bar -->
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <div class="browser-dot red"></div>
+              <div class="browser-dot yellow"></div>
+              <div class="browser-dot green"></div>
+            </div>
+            <div class="browser-url">
+              <span>🔒</span>
+              <span>mybusiness.com</span>
+            </div>
+            <div class="browser-actions">
+              <span>↻</span>
+            </div>
+          </div>
+
+          <!-- Preview Content -->
+          <div class="preview-content">
+            <!-- Mock Website Preview -->
+            <div class="mock-site">
+              <!-- Mock Nav -->
+              <div class="mock-nav">
+                <div class="mock-logo">
+                  <div class="mock-logo-icon">B</div>
+                  <span>My Business</span>
+                </div>
+                <div class="mock-nav-links">
+                  <span>Home</span>
+                  <span>About</span>
+                  <span>Services</span>
+                  <span>Contact</span>
+                </div>
+              </div>
+
+              <!-- Mock Hero -->
+              <div class="mock-hero">
+                <div class="mock-hero-badge">✨ New & Improved</div>
+                <h2>Welcome to My Business</h2>
+                <p>Professional solutions tailored for your success. Experience quality service like never before.</p>
+                <div class="mock-cta-btn">Get Started →</div>
+              </div>
+
+              <!-- Mock Features -->
+              <div class="mock-features">
+                <div class="mock-feature-card">
+                  <div class="mock-feature-icon">🚀</div>
+                  <h4>Fast & Reliable</h4>
+                  <p>Lightning-fast service you can count on</p>
+                </div>
+                <div class="mock-feature-card">
+                  <div class="mock-feature-icon">🔒</div>
+                  <h4>Secure</h4>
+                  <p>Your data is always protected</p>
+                </div>
+                <div class="mock-feature-card">
+                  <div class="mock-feature-icon">💬</div>
+                  <h4>24/7 Support</h4>
+                  <p>We're here whenever you need us</p>
+                </div>
+              </div>
+
+              <!-- Mock Footer -->
+              <div class="mock-footer">
+                <span>© 2026 My Business. All rights reserved.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-row">
+        <button class="action-secondary" onclick="goBack()">
+          ← Back to Edit
+        </button>
+        <button class="action-primary" onclick="downloadSite()">
+          ⬇ Download .zip Theme
+        </button>
+        <button class="action-success" onclick="deploySite()">
+          🚀 Deploy to Domain
+        </button>
+      </div>
+
+      <!-- Changes Summary -->
+      <div class="changes-card">
+        <div class="changes-header">
+          <div class="changes-title">📋 AI Improvements Summary</div>
+          <span class="changes-badge">12 changes</span>
+        </div>
+        <div class="changes-list">
+          <div class="change-item">
+            <span class="change-icon change-improved">↑</span>
+            <div class="change-text">
+              <div class="change-title">Headline rewritten</div>
+              <div class="change-desc">"Welcome to My Business" — improved for SEO & readability</div>
+            </div>
+            <span class="change-tag seo">SEO +12</span>
+          </div>
+          <div class="change-item">
+            <span class="change-icon change-improved">↑</span>
+            <div class="change-text">
+              <div class="change-title">Meta description added</div>
+              <div class="change-desc">160-character optimized description for search engines</div>
+            </div>
+            <span class="change-tag seo">SEO +8</span>
+          </div>
+          <div class="change-item">
+            <span class="change-icon change-new">+</span>
+            <div class="change-text">
+              <div class="change-title">3 new sections added</div>
+              <div class="change-desc">Features, Testimonials & Contact sections generated</div>
+            </div>
+            <span class="change-tag content">Content</span>
+          </div>
+          <div class="change-item">
+            <span class="change-icon change-improved">↑</span>
+            <div class="change-text">
+              <div class="change-title">Images optimized</div>
+              <div class="change-desc">8 images compressed & alt tags generated</div>
+            </div>
+            <span class="change-tag perf">Perf +15</span>
+          </div>
+          <div class="change-item">
+            <span class="change-icon change-improved">↑</span>
+            <div class="change-text">
+              <div class="change-title">Color scheme enhanced</div>
+              <div class="change-desc">Improved contrast & modern gradient accents</div>
+            </div>
+            <span class="change-tag design">Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before/After Toggle -->
+      <div class="compare-card">
+        <div class="compare-title">🔍 Compare: Before vs After</div>
+        <div class="compare-grid">
+          <div class="compare-col">
+            <div class="compare-label bad">❌ Before</div>
+            <div class="compare-item">
+              <span>SEO Score</span>
+              <span class="compare-val bad">38</span>
+            </div>
+            <div class="compare-item">
+              <span>Content Quality</span>
+              <span class="compare-val bad">45%</span>
+            </div>
+            <div class="compare-item">
+              <span>Page Speed</span>
+              <span class="compare-val bad">62</span>
+            </div>
+            <div class="compare-item">
+              <span>Mobile Ready</span>
+              <span class="compare-val bad">❌</span>
+            </div>
+          </div>
+          <div class="compare-col">
+            <div class="compare-label good">✅ After (WebSuit AI)</div>
+            <div class="compare-item">
+              <span>SEO Score</span>
+              <span class="compare-val good">87</span>
+            </div>
+            <div class="compare-item">
+              <span>Content Quality</span>
+              <span class="compare-val good">91%</span>
+            </div>
+            <div class="compare-item">
+              <span>Page Speed</span>
+              <span class="compare-val good">94</span>
+            </div>
+            <div class="compare-item">
+              <span>Mobile Ready</span>
+              <span class="compare-val good">✅</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+
+    function switchDevice(device, btn) {
+      // Update active button
+      document.querySelectorAll('.device-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update frame size
+      const frame = document.getElementById('browserFrame');
+      frame.classList.remove('desktop', 'tablet', 'mobile');
+      frame.classList.add(device);
+    }
+
+    function downloadSite() {
+      if (confirm('Download the improved WordPress theme as a .zip file?')) {
+        alert('✅ Download started! Your theme .zip is being generated...');
+        // After download, go back to dashboard
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      }
+    }
+
+    function deploySite() {
+      if (confirm('Deploy the improved site to your domain? This will replace the existing site.')) {
+        alert('🚀 Deployment started! Your improved site will be live in a few minutes.');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      }
+    }
+
+    function goBack() {
+      window.location.href = 'generate.html';
+    }
+
+    function goToEditor() {
+      alert('✏️ Opening content editor...');
+      // If you have an editor page later:
+      // window.location.href = 'editor.html';
+    }
+  </script>
+</body>
+
+</html>
