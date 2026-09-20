@@ -1,1 +1,8 @@
-{"buildCommand": "echo 'no build'", "outputDirectory": "Template"} 
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
